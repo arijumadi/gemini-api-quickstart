@@ -9,19 +9,16 @@ from flask import (
 from werkzeug.utils import secure_filename
 from PIL import Image
 import io
-from dotenv import load_dotenv
 import os
 
 import google.generativeai as genai
 
-# Load environment variables from .env file
-load_dotenv()
 
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 
 # WARNING: Do not share code with you API key hard coded in it.
 # Get your Gemini API key from: https://aistudio.google.com/app/apikey
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
 
 model = genai.GenerativeModel('gemini-1.5-flash')
 
