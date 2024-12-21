@@ -18,7 +18,7 @@ ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 
 # WARNING: Do not share code with you API key hard coded in it.
 # Get your Gemini API key from: https://aistudio.google.com/app/apikey
-genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
 model = genai.GenerativeModel('gemini-1.5-flash')
 
